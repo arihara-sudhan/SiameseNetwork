@@ -7,13 +7,13 @@ We may need a lot of images for such a problem. Isn’t it fascinating when ther
 We need n number of images of each employees of the organization to train the network. And another important problem here is the so-called Scalability. If a new employee joins there, we need to retrain the classifier and the situation is HELL. A Simple but efficient solution here is using the SIMILARITY MODEL rather than a CLASSIFIER MODEL. This is where the Siamese Network comes to take a part in our journey.
 Let’s make illustrations for a better understanding.<p>
 <img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/what.png' alt=''>
-<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/what2.png' alt=''>
 
 <h1>THE IDEA BEHIND</h1>
 <p>Now, we just want to know what to do.
 Looking at the image above, we can observe that we pass two input images to CNNs of same configurations which have a convolutional layer, Max-Pooling and an FC Layer. Eventually,  feature vectors / embeddings are obtained from these networks. These vectors are to be compared in order to check for similarity. Those feature vectors are passed into a softmax classifier. These two vectors if they are of the same person should be pretty much similar.
 On the other hand, if they are of different people, these two vectors should be different. The siamese network uses identical networks.
 The difference is found between two vectors using the given formula. It will be small on having similar images and vice versa.</p>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/what2.png' alt=''>
 
 <h1>TRIPLET LOSS</h1>
 Computationally speaking, in all sort of neural networks, we define a loss function which must be minimized for a better training. Here, we define the so-called triplet loss. But, why the name “Triplet Loss”? We are about to deal with collection of three data on each epoch. What are those three ? They are Anchor, Positive and a Negative Image. Anchor is the one given to be verified or a ground truth. 

@@ -31,10 +31,6 @@ J = Σ(i=0 To m)max(0,D)
 Now, let’s learn about contrastive loss which can also be used for this.
 
 
-
-<h1>CONTRASTIVE LOSS</h1>
-This is one of the first training objectives that was used for contrastive learning. It takes as input a pair of samples that are either similar or dissimilar, and it brings similar samples closer and dissimilar samples far apart. More formally, we suppose that we have a pair  and a label  that is equal to 0 if the samples are similar and 1 otherwise. To extract a low-dimensional representation of each sample, we use a Convolutional Neural Network  that encodes the input images  and  into an embedding space where  and . The contrastive loss is defined as:
-Let’s implement the Siamese Network using PyTorch.
 <img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/arch.png' alt=''>
 
 <h1>OUTPUTS</h1>

@@ -6,6 +6,8 @@
 We may need a lot of images for such a problem. Isn’t it fascinating when there is no need for that while we use Siamese Network for image verification ? And, it is not even a workload to train a bunch of images since just one person is going to access the phone and training on some images of him is not a sin. But, imagine when an organization uses such an authentication mechanism for it’s employees. The situation becomes a bit worse.
 We need n number of images of each employees of the organization to train the network. And another important problem here is the so-called Scalability. If a new employee joins there, we need to retrain the classifier and the situation is HELL. A Simple but efficient solution here is using the SIMILARITY MODEL rather than a CLASSIFIER MODEL. This is where the Siamese Network comes to take a part in our journey.
 Let’s make illustrations for a better understanding.<p>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/what.png' alt=''>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/what2.png' alt=''>
 
 <h1>THE IDEA BEHIND</h1>
 <p>Now, we just want to know what to do.
@@ -33,3 +35,9 @@ Now, let’s learn about contrastive loss which can also be used for this.
 <h1>CONTRASTIVE LOSS</h1>
 This is one of the first training objectives that was used for contrastive learning. It takes as input a pair of samples that are either similar or dissimilar, and it brings similar samples closer and dissimilar samples far apart. More formally, we suppose that we have a pair  and a label  that is equal to 0 if the samples are similar and 1 otherwise. To extract a low-dimensional representation of each sample, we use a Convolutional Neural Network  that encodes the input images  and  into an embedding space where  and . The contrastive loss is defined as:
 Let’s implement the Siamese Network using PyTorch.
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/arch.png' alt=''>
+
+<h1>OUTPUTS</h1>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/op1.png'>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/op2.png'>
+<img src='https://github.com/arihara-sudhan/SiameseNetwork/blob/b1cde1417970e0da4769bb04249428c4c30b9df1/pics/op3.png'>
